@@ -122,7 +122,7 @@ function tryAgain(event) {
     if($conn){
       header('Location: ./uploader.html');
     }else{
-        die('<b>Incorrect Password</b><br><a style="text-decoration:none" href="/iwords/" id="TryAgainButton">
+        die('<b>Incorrect Password</b><br><a style="text-decoration:none" href="./" id="TryAgainButton">
 <input type="submit" value="Try again" /></a>');
     }
   ?>
