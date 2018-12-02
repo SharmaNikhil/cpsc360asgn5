@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 
 <head>
 <title>Words Galore!</title>
@@ -58,39 +58,45 @@ function post( file, map ) {
     document.body.appendChild( form );
     form.submit();
 }
+
+function tryAgain(event) {
+  var button = document.getElementById("TryAgainButton");
+  button.click();
+}
+
 </script>
 </head>
 
 <body>
 <div class="tab">
-  <button class="tabLinks" onclick="openTab( event, 'Home' )">Home</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'A'})">A</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'B'})">B</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'C'})">C</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'D'})">D</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'E'})">E</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'F'})">F</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'G'})">G</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'H'})">H</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'I'})">I</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'J'})">J</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'K'})">K</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'L'})">L</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'M'})">M</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'N'})">N</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'O'})">O</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'P'})">P</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Q'})">Q</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'R'})">R</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'S'})">S</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'T'})">T</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'U'})">U</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'V'})">V</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'W'})">W</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'X'})">X</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Y'})">Y</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Z'})">Z</button>
-  <button class="tabLinks" onclick="openTab( event, 'Admin'  )">Admin</button>
+  <button class="tabLinks" onclick="tryAgain(event)">Home</button>
+  <button class="tabLinks" onclick="tryAgain(event)">A</button>
+  <button class="tabLinks" onclick="tryAgain(event)">B</button>
+  <button class="tabLinks" onclick="tryAgain(event)">C</button>
+  <button class="tabLinks" onclick="tryAgain(event)">D</button>
+  <button class="tabLinks" onclick="tryAgain(event)">E</button>
+  <button class="tabLinks" onclick="tryAgain(event)">F</button>
+  <button class="tabLinks" onclick="tryAgain(event)">G</button>
+  <button class="tabLinks" onclick="tryAgain(event)">H</button>
+  <button class="tabLinks" onclick="tryAgain(event)">I</button>
+  <button class="tabLinks" onclick="tryAgain(event)">J</button>
+  <button class="tabLinks" onclick="tryAgain(event)">K</button>
+  <button class="tabLinks" onclick="tryAgain(event)">L</button>
+  <button class="tabLinks" onclick="tryAgain(event)">M</button>
+  <button class="tabLinks" onclick="tryAgain(event)">N</button>
+  <button class="tabLinks" onclick="tryAgain(event)">O</button>
+  <button class="tabLinks" onclick="tryAgain(event)">P</button>
+  <button class="tabLinks" onclick="tryAgain(event)">Q</button>
+  <button class="tabLinks" onclick="tryAgain(event)">R</button>
+  <button class="tabLinks" onclick="tryAgain(event)">S</button>
+  <button class="tabLinks" onclick="tryAgain(event)">T</button>
+  <button class="tabLinks" onclick="tryAgain(event)">U</button>
+  <button class="tabLinks" onclick="tryAgain(event)">V</button>
+  <button class="tabLinks" onclick="tryAgain(event)">W</button>
+  <button class="tabLinks" onclick="tryAgain(event)">X</button>
+  <button class="tabLinks" onclick="tryAgain(event)">Y</button>
+  <button class="tabLinks" onclick="tryAgain(event)">Z</button>
+  <button class="tabLinks" onclick="tryAgain(event)">Admin</button>
   </form>
 </div>
 
@@ -114,19 +120,14 @@ function post( file, map ) {
     
     $conn = mysqli_connect('localhost',$username, $password,'words');
     if($conn){
-      header('Location: uploader.html');
+      header('Location: ./uploader.html');
     }else{
-      die('<b>Incorrect Password</b><br><a style="text-decoration:none" href="/iwords/">
+        die('<b>Incorrect Password</b><br><a style="text-decoration:none" href="/iwords/" id="TryAgainButton">
 <input type="submit" value="Try again" /></a>');
     }
   ?>
 </div>
 
 </body>
-
-<!-- <script>
-var admin = document.getElementsByClassName('tablinks')[27];
-admin.click();
-</script> -->
 
 </html>
