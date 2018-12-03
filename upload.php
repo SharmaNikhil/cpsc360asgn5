@@ -107,21 +107,14 @@ function tryAgain(event) {
 
 <div id='Admin' class='tabContent' active style="display:block">
   <h3>Admin</h3>
-  <h1>uploadData.php</h1>
-  <form enctype="multipart/form-data" action="uploadData.php" method="post">
-  <h4>Upload data</h4>
-  <input type="hidden" name="MAX_FILE_SIZE" value="1000" />
-      <input type="file" name="uploaded" size="30" /><input type="submit" value="Upload" />
-  </form>
+  <h1>upload.php</h1>
+  <?
+    ini_set('display_errors','0');
 
-  <form enctype="multipart/form-data" action="deleteData.php" method="post">
-  <h4>Delete data</h4>
-  <input type="hidden" name="MAX_FILE_SIZE" value="1000" />
-      <input type="submit" value="Delete" />
-  </form>
+    $password = $_POST['password']
 
-  <a style="text-decoration:none" href="./" id="LogoutButton">
-<input type="submit" value="Logout" /></a>
+    print_r($password);
+  ?>
 </div>
 
 </body>

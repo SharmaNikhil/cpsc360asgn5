@@ -82,34 +82,34 @@ function tryAgain(event) {
 
 <body>
 <div class="tab">
-  <button class="tabLinks" onclick="tryAgain(event)">Home</button>
-  <button class="tabLinks" onclick="tryAgain(event)">A</button>
-  <button class="tabLinks" onclick="tryAgain(event)">B</button>
-  <button class="tabLinks" onclick="tryAgain(event)">C</button>
-  <button class="tabLinks" onclick="tryAgain(event)">D</button>
-  <button class="tabLinks" onclick="tryAgain(event)">E</button>
-  <button class="tabLinks" onclick="tryAgain(event)">F</button>
-  <button class="tabLinks" onclick="tryAgain(event)">G</button>
-  <button class="tabLinks" onclick="tryAgain(event)">H</button>
-  <button class="tabLinks" onclick="tryAgain(event)">I</button>
-  <button class="tabLinks" onclick="tryAgain(event)">J</button>
-  <button class="tabLinks" onclick="tryAgain(event)">K</button>
-  <button class="tabLinks" onclick="tryAgain(event)">L</button>
-  <button class="tabLinks" onclick="tryAgain(event)">M</button>
-  <button class="tabLinks" onclick="tryAgain(event)">N</button>
-  <button class="tabLinks" onclick="tryAgain(event)">O</button>
-  <button class="tabLinks" onclick="tryAgain(event)">P</button>
-  <button class="tabLinks" onclick="tryAgain(event)">Q</button>
-  <button class="tabLinks" onclick="tryAgain(event)">R</button>
-  <button class="tabLinks" onclick="tryAgain(event)">S</button>
-  <button class="tabLinks" onclick="tryAgain(event)">T</button>
-  <button class="tabLinks" onclick="tryAgain(event)">U</button>
-  <button class="tabLinks" onclick="tryAgain(event)">V</button>
-  <button class="tabLinks" onclick="tryAgain(event)">W</button>
-  <button class="tabLinks" onclick="tryAgain(event)">X</button>
-  <button class="tabLinks" onclick="tryAgain(event)">Y</button>
-  <button class="tabLinks" onclick="tryAgain(event)">Z</button>
-  <button class="tabLinks" onclick="tryAgain(event)">Admin</button>
+  <button class="tabLinks" onclick="openTab( event, 'Home' )">Home</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'A'})">A</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'B'})">B</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'C'})">C</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'D'})">D</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'E'})">E</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'F'})">F</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'G'})">G</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'H'})">H</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'I'})">I</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'J'})">J</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'K'})">K</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'L'})">L</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'M'})">M</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'N'})">N</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'O'})">O</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'P'})">P</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Q'})">Q</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'R'})">R</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'S'})">S</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'T'})">T</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'U'})">U</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'V'})">V</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'W'})">W</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'X'})">X</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Y'})">Y</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Z'})">Z</button>
+  <button class="tabLinks" onclick="openTab( event, 'Admin'  )">Admin</button>
   </form>
 </div>
 
@@ -135,7 +135,7 @@ function tryAgain(event) {
     $conn = mysqli_connect('localhost',$username, $password,'words');
     if($conn){
       //header('Location: ./uploader.html'); //I think this should change to uploadData.php
-        echo '<p><b> Upload Data </b></p><form enctype="multipart/form-data" action="upload.php" onsubmit = "return verfiy(this);" method="post"><input type="hidden" name="MAX_FILE_SIZE" value="10000000"/><input type="file" name="uploaded" size="300"/><input type="submit" value="Upload" /></form><p></p><p><b> Delete Data </b></p><form action = "delete.php" method = "post"onsubmit = "return verfiy2(this);"><input type="submit" value="Delete"/></form><p></p><button onclick="refresh">Log out</button>';
+        echo '<p><b> Upload Data </b></p><form enctype="multipart/form-data" action="upload.php" onsubmit = "return verfiy(this);" method="post"><input type="hidden" name="MAX_FILE_SIZE" value="10000000"/><input type="file" name="uploaded" size="300"/><input type="submit" value="Upload" /><input type="hidden" name="password" id="passwordField" value="<?php echo $_POST[&quot;password&quot;] ?>" /></form><p></p><p><b> Delete Data </b></p><form action = "delete.php" method = "post"onsubmit = "return verfiy2(this);"><input type="submit" value="Delete"/></form><p></p><button onclick="refresh">Log out</button>';
     }else{
         die('<b>Incorrect Password</b><br><a style="text-decoration:none" href="./" id="TryAgainButton"><button onclick="refresh">Try Again</button></a>');
     }
