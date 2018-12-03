@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 
 <head>
 <title>Words Galore!</title>
@@ -16,6 +16,19 @@ function verify( form, name ) {
   }
   alert("Input cannot be empty.");
   return false;
+}
+
+function verfiy(form){
+    file = form.elements["uploaded"];
+    if((file.value != null) && (file.value != "")){
+        return confirm("Uploading Data file " + file.value );
+    }
+    alert("The filename cannot be empty.");
+    return false;
+}
+
+function verfiy2(form){
+    return confirm("All data will be deleted. Proceed? " );
 }
 
 //
@@ -107,6 +120,7 @@ function tryAgain(event) {
 
 <div id='Admin' class='tabContent' active style="display:block">
   <h3>Admin</h3>
+
   <?php
 
     // session_start(); 
@@ -120,10 +134,10 @@ function tryAgain(event) {
     
     $conn = mysqli_connect('localhost',$username, $password,'words');
     if($conn){
-      header('Location: ./uploader.html');
+      //header('Location: ./uploader.html'); //I think this should change to uploadData.php
+        echo '<p><b> Upload Data </b></p><form enctype="multipart/form-data" action="upload.php" onsubmit = "return verfiy(this);" method="post"><input type="hidden" name="MAX_FILE_SIZE" value="10000000"/><input type="file" name="uploaded" size="300"/><input type="submit" value="Upload" /></form><p></p><p><b> Delete Data </b></p><form action = "delete.php" method = "post"onsubmit = "return verfiy2(this);"><input type="submit" value="Delete"/></form><p></p><button onclick="refresh">Log out</button>';
     }else{
-        die('<b>Incorrect Password</b><br><a style="text-decoration:none" href="./" id="TryAgainButton">
-<input type="submit" value="Try again" /></a>');
+        die('<b>Incorrect Password</b><br><a style="text-decoration:none" href="./" id="TryAgainButton"><button onclick="refresh">Try Again</button></a>');
     }
   ?>
 </div>
