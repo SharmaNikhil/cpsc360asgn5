@@ -96,8 +96,30 @@ function tryAgain(event) {
   <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'X'})">X</button>
   <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Y'})">Y</button>
   <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Z'})">Z</button>
-  <button class="tabLinks" onclick="openTab( event, 'Admin'  )">Admin</button>
+  <button class="tabLinks" onclick="post( 'password.php', {'password':''})">Admin</button>
   </form>
+</div>
+
+<?php
+  ini_set('display_errors','0');
+
+  //Data gathering
+  $letter = $_POST['letter'];
+  $password = $_POST['password'];
+
+  $db = new mysqli( 'localhost', 'wordsuser', 'anonymous', 'words' );
+
+  $select = "SELECT * FROM wordList WHERE word LIKE ".$letter."%";
+?>
+<script>
+  $("button").filter(function() {
+    return $(this).text() === "<?=$letter ?>";
+}).addClass("active")
+</script>
+
+<div id='Dictionary' class='tabContent' active style="display:block">
+  
+  <h3><?=$letter ?></h3>
 </div>
 
 <div id='Home' class='tabContent'>
@@ -105,23 +127,16 @@ function tryAgain(event) {
   <p>Welcome to Words Galore! where you can read, search and upload words from a text file.</p>
 </div>
 
-<div id='Admin' class='tabContent' active style="display:block">
+<div id='Admin' class='tabContent'>
+  <h1>THIS IS BROKEN</h1>
   <h3>Admin</h3>
-  <h1>uploadData.php</h1>
-  <form enctype="multipart/form-data" action="upload.php" method="post">
-  <h4>Upload data</h4>
-  <input type="hidden" name="MAX_FILE_SIZE" value="1000" />
-      <input type="file" name="uploaded" size="30" /><input type="submit" value="Upload" />
+  <form action="password.php" method="post" onsubmit="return verify(this,'password');">
+     <p>
+     Password
+     <input type="password" name="password" />
+     <input type="submit"   value="Login" />
+     </p>
   </form>
-
-  <form enctype="multipart/form-data" action="deleteData.php" method="post">
-  <h4>Delete data</h4>
-  <input type="hidden" name="MAX_FILE_SIZE" value="1000" />
-      <input type="submit" value="Delete" />
-  </form>
-
-  <a style="text-decoration:none" href="./" id="LogoutButton">
-<input type="submit" value="Logout" /></a>
 </div>
 
 </body>

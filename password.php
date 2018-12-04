@@ -141,6 +141,13 @@ function tryAgain(event) {
         die('<b>Incorrect Password</b><br><a style="text-decoration:none" href="./" id="TryAgainButton"><button onclick="refresh">Try Again</button></a>');
     }
   ?>
+
+<script>
+  $("button").filter(function() {
+    return $(this).text() === "Admin";
+}).addClass("active")
+</script>
+
 </div>
 
 </body>
