@@ -108,7 +108,7 @@ function tryAgain(event) {
 <div id='Admin' class='tabContent' active style="display:block">
   <h3>Admin</h3>
   <h1>uploadData.php</h1>
-  <form enctype="multipart/form-data" action="uploadData.php" method="post">
+  <form enctype="multipart/form-data" action="upload.php" method="post">
   <h4>Upload data</h4>
   <input type="hidden" name="MAX_FILE_SIZE" value="1000" />
       <input type="file" name="uploaded" size="30" /><input type="submit" value="Upload" />

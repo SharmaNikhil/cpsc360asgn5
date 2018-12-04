@@ -135,7 +135,7 @@ function tryAgain(event) {
     $conn = mysqli_connect('localhost',$username, $password,'words');
     if($conn){
       //header('Location: ./uploader.html'); //I think this should change to uploadData.php
-        echo '<p><b> Upload Data </b></p><form enctype="multipart/form-data" action="upload.php" onsubmit = "return verfiy(this);" method="post"><input type="hidden" name="MAX_FILE_SIZE" value="10000000"/><input type="file" name="uploaded" size="300"/><input type="submit" value="Upload" /><input type="hidden" name="password" id="passwordField" value="<?php echo $_POST[&quot;password&quot;] ?>" /></form><p></p><p><b> Delete Data </b></p><form action = "delete.php" method = "post"onsubmit = "return verfiy2(this);"><input type="submit" value="Delete"/></form><p></p><button onclick="refresh">Log out</button>';
+        echo '<p><b> Upload Data </b></p><form enctype="multipart/form-data" action="upload.php" onsubmit = "return verfiy(this);" method="post"><input type="hidden" name="MAX_FILE_SIZE" value="10000000"/><input type="file" name="uploaded" size="300"/><input type="submit" value="Upload" /><input type="hidden" name="password" id="passwordField" value="<&quest;php echo $_POST[&quot;password&quot;] &quest;>" /></form><p></p><p><b> Delete Data </b></p><form action = "delete.php" method = "post"onsubmit = "return verfiy2(this);"><input type="submit" value="Delete"/></form><p></p><button onclick="refresh">Log out</button>';
     }else{
         die('<b>Incorrect Password</b><br><a style="text-decoration:none" href="./" id="TryAgainButton"><button onclick="refresh">Try Again</button></a>');
     }

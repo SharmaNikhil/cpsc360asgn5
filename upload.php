@@ -107,13 +107,15 @@ function tryAgain(event) {
 
 <div id='Admin' class='tabContent' active style="display:block">
   <h3>Admin</h3>
-  <h1>upload.php</h1>
-  <?
+  <?php
     ini_set('display_errors','0');
 
-    $password = $_POST['password']
+    $password = $_POST['password'];
 
+    echo '<b>Password</b><br>';
     print_r($password);
+    echo '<hr>';
+    print_r($_POST);
   ?>
 </div>
 
