@@ -70,32 +70,32 @@ function tryAgain(event) {
 <body>
 <div class="tab">
   <button class="tabLinks" onclick="openTab( event, 'Home' )">Home</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'A'})">A</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'B'})">B</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'C'})">C</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'D'})">D</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'E'})">E</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'F'})">F</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'G'})">G</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'H'})">H</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'I'})">I</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'J'})">J</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'K'})">K</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'L'})">L</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'M'})">M</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'N'})">N</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'O'})">O</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'P'})">P</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Q'})">Q</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'R'})">R</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'S'})">S</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'T'})">T</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'U'})">U</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'V'})">V</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'W'})">W</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'X'})">X</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Y'})">Y</button>
-  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Z'})">Z</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'A', 'password':'<?php echo $_POST['password']; ?>'})">A</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'B', 'password':'<?php echo $_POST['password']; ?>'})">B</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'C', 'password':'<?php echo $_POST['password']; ?>'})">C</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'D', 'password':'<?php echo $_POST['password']; ?>'})">D</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'E', 'password':'<?php echo $_POST['password']; ?>'})">E</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'F', 'password':'<?php echo $_POST['password']; ?>'})">F</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'G', 'password':'<?php echo $_POST['password']; ?>'})">G</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'H', 'password':'<?php echo $_POST['password']; ?>'})">H</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'I', 'password':'<?php echo $_POST['password']; ?>'})">I</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'J', 'password':'<?php echo $_POST['password']; ?>'})">J</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'K', 'password':'<?php echo $_POST['password']; ?>'})">K</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'L', 'password':'<?php echo $_POST['password']; ?>'})">L</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'M', 'password':'<?php echo $_POST['password']; ?>'})">M</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'N', 'password':'<?php echo $_POST['password']; ?>'})">N</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'O', 'password':'<?php echo $_POST['password']; ?>'})">O</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'P', 'password':'<?php echo $_POST['password']; ?>'})">P</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Q', 'password':'<?php echo $_POST['password']; ?>'})">Q</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'R', 'password':'<?php echo $_POST['password']; ?>'})">R</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'S', 'password':'<?php echo $_POST['password']; ?>'})">S</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'T', 'password':'<?php echo $_POST['password']; ?>'})">T</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'U', 'password':'<?php echo $_POST['password']; ?>'})">U</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'V', 'password':'<?php echo $_POST['password']; ?>'})">V</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'W', 'password':'<?php echo $_POST['password']; ?>'})">W</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'X', 'password':'<?php echo $_POST['password']; ?>'})">X</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Y', 'password':'<?php echo $_POST['password']; ?>'})">Y</button>
+  <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Z', 'password':'<?php echo $_POST['password']; ?>'})">Z</button>
   <button class="tabLinks" onclick="openTab( event, 'Admin'  )">Admin</button>
   </form>
 </div>
@@ -118,6 +118,8 @@ function tryAgain(event) {
     print_r($_POST);
     echo '<hr><b>$_FILES</b><br>';
     print_r($_FILES);
+
+
   ?>
 </div>
 
