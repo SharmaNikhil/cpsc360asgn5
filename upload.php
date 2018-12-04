@@ -112,10 +112,12 @@ function tryAgain(event) {
 
     $password = $_POST['password'];
 
-    echo '<b>Password</b><br>';
+    echo '<b>$password</b><br>';
     print_r($password);
-    echo '<hr>';
+    echo '<hr><b>$_POST</b><br>';
     print_r($_POST);
+    echo '<hr><b>$_FILES</b><br>';
+    print_r($_FILES);
   ?>
 </div>
 
