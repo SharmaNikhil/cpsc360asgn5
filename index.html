@@ -1,9 +1,22 @@
 <html>
 
 <head>
-<title>Words Galore!</title><style type="text/css">@import url(iwords.css);</style><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script language=JavaScript>
-function verify( form, name ) {  var text = form.elements[ name ];  if ((text.value != null) && (text.value != "")) {    return true;  }  alert("Input cannot be empty.");  return false;}
+<title>Words Galore!</title>
+<style type="text/css">
+@import url(iwords.css);
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script language=JavaScript>
+function verify( form, name ) {
+  var text = form.elements[ name ];
+
+  if ((text.value != null) && (text.value != "")) {
+    return true;
+  }
+  alert("Input cannot be empty.");
+  return false;
+}
 
 //
 // based on: <https://www.w3schools.com/howto/howto_js_tabs.asp>
@@ -44,7 +57,8 @@ function post( file, map ) {
     }
     document.body.appendChild( form );
     form.submit();
-}</script>
+}
+</script>
 </head>
 
 <body>

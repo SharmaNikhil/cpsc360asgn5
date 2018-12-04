@@ -59,11 +59,6 @@ function post( file, map ) {
     form.submit();
 }
 
-function tryAgain(event) {
-  var button = document.getElementById("TryAgainButton");
-  button.click();
-}
-
 </script>
 </head>
 
@@ -75,10 +70,6 @@ function tryAgain(event) {
   //Data gathering
   $letter = $_POST['letter'];
   $password = $_POST['password'];
-
-  $db = new mysqli( 'localhost', 'wordsuser', 'anonymous', 'words' );
-
-  $select = "SELECT * FROM wordList WHERE word LIKE ".$letter."%";
 ?>
 
 <div class="tab">
@@ -109,7 +100,14 @@ function tryAgain(event) {
   <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'X', 'password':'<?php echo $_POST['password']; ?>'})">X</button>
   <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Y', 'password':'<?php echo $_POST['password']; ?>'})">Y</button>
   <button class="tabLinks" onclick="post( 'dictionary.php', {'letter':'Z', 'password':'<?php echo $_POST['password']; ?>'})">Z</button>
-  <button class="tabLinks" onclick="post( 'password.php', {'password':'<?php echo $password; ?>'})">Admin</button>
+  <button class="tabLinks" onclick="
+  <?php
+    if($password != '') {
+      echo "post( 'password.php', {'password':'".$password."'})";
+    } else {
+      echo "openTab( event, 'Admin'  )";
+    }
+  ?>">Admin</button>
   </form>
 </div>
 
@@ -119,10 +117,29 @@ function tryAgain(event) {
 }).addClass("active")
 </script>
 
+<?php
+  $db = new mysqli( 'localhost', 'wordsuser', 'anonymous', 'words' );
+
+  $select = "SELECT * FROM `wordsTable` WHERE `entry` LIKE '".$letter."%'";
+  $result = $db->query( $select );
+  $rows = $result->num_rows;
+?>
+
 <div id='Dictionary' class='tabContent' active style="display:block">
-  
   <h3><?=$letter ?></h3>
-  <h2>Password: <small><?php echo $password; ?></small></h2>
+
+  Number of entries: <?php echo $rows; ?><br>
+  
+  <table class='words'>
+  <?php
+    if($rows != 0) {
+      for ($i=0; $i<$rows; $i++) {
+        $row = $result->fetch_assoc();
+        echo "<tr class='highlight'><td>".($i+1)."</td><td>".$row['entry']."</td></tr>";
+      }
+    }
+  ?>
+  </table>
 </div>
 
 <div id='Home' class='tabContent'>
@@ -131,7 +148,6 @@ function tryAgain(event) {
 </div>
 
 <div id='Admin' class='tabContent'>
-  <h1>THIS IS BROKEN</h1>
   <h3>Admin</h3>
   <form action="password.php" method="post" onsubmit="return verify(this,'password');">
      <p>
